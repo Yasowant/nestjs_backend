@@ -1,4 +1,13 @@
-//
+// import { Users } from 'src/entities/user.entity';
+// import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
+
+// export const pgConfig: PostgresConnectionOptions = {
+//   url: 'postgresql://neondb_owner:npg_r0ogcjAVCv5e@ep-fragrant-hall-a4c948k9-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require',
+//   type: 'postgres',
+//   port: 3306,
+//   entities: [__dirname + '/**/*.entity{.ts,.js}'],
+//   synchronize: true,
+// };
 
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
