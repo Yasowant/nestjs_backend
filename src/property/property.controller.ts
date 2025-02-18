@@ -7,17 +7,19 @@ import {
   ParseIntPipe,
   Patch,
   Post,
+  Query,
 } from '@nestjs/common';
 import { CreatePropertyDto } from './dto/createProperty.dto';
 import { PropertyService } from './property.service';
 import { updatePropertyDto } from './dto/updateProperty.dto';
+import { PaginationDTO } from './dto/pagination.dto';
 
 @Controller('property')
 export class PropertyController {
   constructor(private propertyService: PropertyService) {}
   @Get()
-  findAll() {
-    return this.propertyService.findAll();
+  findAll(@Query() paginationDTO: PaginationDTO) {
+    return this.propertyService.findAll(paginationDTO);
   }
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number) {

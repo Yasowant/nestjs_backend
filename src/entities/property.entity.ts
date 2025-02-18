@@ -9,6 +9,7 @@ import {
 } from 'typeorm';
 import { PropertyFeature } from './propertyFeature.entity';
 import { Users } from './user.entity';
+import { PropertyType } from './propertyType.entity';
 
 @Entity()
 export class Property {
@@ -41,4 +42,6 @@ export class Property {
   // Define Many-to-Many relationship with Users (Properties can be liked by multiple users)
   @ManyToMany(() => Users, (user) => user.likedProperties)
   likedBy: Users[];
+  @ManyToOne(() => PropertyType)
+  type: PropertyType;
 }
